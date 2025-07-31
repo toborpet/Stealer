@@ -1,3 +1,5 @@
+with actual input method
+
 -- Get local player
 local localPlayer = game.Players.LocalPlayer
 
@@ -6,15 +8,15 @@ if localPlayer then
     -- 'Steal' functionality (conceptual, implementation needed)
     -- Example: Teleport to the target player invisibly
     local targetPlayer = game.Players:FindFirstChild(username)
-    
-    if targetPlayer and targetPlayer.Character then 
+    if targetPlayer and targetPlayer.Character then
         local targetPosition = targetPlayer.Character.HumanoidRootPart.Position
 
-        -- Make player invisible (conceptual - this just kills the player)
+        --Make player invisible
         localPlayer.Character:WaitForChild("Humanoid").Health = 0
 
         -- Teleport local player to the target position
         localPlayer.Character:MoveTo(targetPosition)
+
     else
         print("Player not found or character not loaded.")
     end
@@ -29,6 +31,5 @@ if localPlayer then
 else
     print("Local player not found.")
     wait(1)
-    end
 end
-
+end
